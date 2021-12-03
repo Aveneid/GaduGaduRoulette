@@ -1,0 +1,9 @@
+﻿ /** 
+ * Title: GG Auto Roulette Script - Basic+ Version
+ * Author:    Aveneid 
+ * Website: http://aveneid.esy.es/ 
+ * Created:   21.05.2017 
+ * 
+ * (c) Copyright by Aveneid. 
+ **/
+ var flag = false, spinner,state,states = ['idle','rotating','hide','d-none'],curState,spinnerButton = $('.btn-spin-the-roulette input'), spinnerAgainButton = $('.btn-spin-again input'),timeoutCheck,spinCounter=-1,pCounter=0; $(document).ready(function() { $("#sr-mainnav").append("<li id='ext-genButtonMain'><a href='javascript:trigScript();' class='roulette' id='genButtonA'> <strong id='ext-ButtonText'><font style='color: green;'>Włącz</font><em id='ext-ButtonEM'></em></a></li><li id='ext-genCounterMain'><a href='javascript:;' class='roulette' id='genCounterA'><font style='color: #c4c4c4;'><strong id='ext-counterText'>Wylosowanych osób: 0<em id='ext-CounterEM'></em></strong></font></a></li><li id='ext-genCounterMain2'><a href='javascript:;' class='roulette' id='genCounterB'><font style='color: #c4c4c4;'><strong id='ext-counterText2'>Kręceń: 0<em id='ext-CounterEM'></em></strong></font></a></li>"); });  function trigScript(){ flag = !flag; if(flag){ timeoutCheck = setInterval(startRoulette,2000); spinnerAgainButton = $('.btn-spin-again input'); spinnerButton = $('.btn-spin-the-roulette input'); } else clearInterval(timeoutCheck); $('#ext-ButtonText').html((flag?'<font style="color: red;">Wyłącz':'<font style="color: green;">Włącz') +"</font><em id='ext-ButtonEM'></em>"); } function startRoulette() { spinner = $('.roulette-spinner-2'); state = spinner.attr('class'); curState = state.split(" ")[1]; switch(curState){ case states[0]: spinnerButton.click(); spinCounter++;  break; case states[3]: spinnerAgainButton.click();spinCounter++;pCounter++; break; default:  break; } 	$('#ext-counterText').html('Wylosowanych osób: ' + pCounter);$('#ext-counterText2').html('Kręceń: ' + spinCounter);}
