@@ -16,7 +16,7 @@ $(document).ready(function () {
     var link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = 'http://aveneid.esy.es/projects/GGRouletteScript/advanced/style.css';
+    link.href = 'style.css';
     link.media = 'all';
     head.appendChild(link);
     $("body").append(htmlMenu);
