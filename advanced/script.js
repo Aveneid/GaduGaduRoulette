@@ -6,8 +6,10 @@
  *
  * (c) Copyright by Aveneid.
  **/
-var flag = false, collectData = false, spinner, state, states = ['idle', 'rotating', 'hide', 'd-none'], curState, spinnerButton = $('.btn-spin-the-roulette input'), spinnerAgainButton = $('.btn-spin-again input'), spinCounter = -1, pCounter = 0, timeoutCheck;
-var collectedData = [], rawData = []; /* collectData: number, name, yo, city, avatar */ var htmlMenu = "<div class='menuMain'><span class='menuOpen'>Menu</span><div id='menuDrop' style='display:none;'><span class='menuBackground'><ul><li>Losowanie <span class='menuButton menuButtonGreen' id='trigScript'>Włącz</span></li><li>Logi <span class='menuButton menuButtonGreen' id='collectData'>Włącz</span></li><hr><li id='spinCounterText'>&nbsp;</li><br><li id='pCounterText'>&nbsp;</li></ul></span><span style='width:auto;' class='menuButton menuButtonBlue' id='showData'>Pokaż dane</span></div></div>";
+var flag = false, collectData = false, spinner, state, states = ['idle', 'rotating', 'hide', 'd-none'], curState
+var spinnerButton = $('.btn-spin-the-roulette input'), spinnerAgainButton = $('.btn-spin-again input'), spinCounter = -1, pCounter = 0, timeoutCheck;
+var collectedData = [], rawData = []; /* collectData: number, name, yo, city, avatar */ 
+var htmlMenu = "<div class='menuMain'><span class='menuOpen'>Menu</span><div id='menuDrop' style='display:none;'><span class='menuBackground'><ul><li>Losowanie <span class='menuButton menuButtonGreen' id='trigScript'>Włącz</span></li><li>Logi <span class='menuButton menuButtonGreen' id='collectData'>Włącz</span></li><hr><li id='spinCounterText'>&nbsp;</li><br><li id='pCounterText'>&nbsp;</li></ul></span><span style='width:auto;' class='menuButton menuButtonBlue' id='showData'>Pokaż dane</span></div></div>";
 var tHeader = "<th>Numer</th><th>Nazwa</th><th>Wiek</th><th>Miasto</th><th>Avatar</th>";
 $(document).ready(function () {
     var head = document.getElementsByTagName('head')[0];
